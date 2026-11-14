@@ -1,0 +1,36 @@
+/// Translation of the C `parse_int` function.
+///
+/// Mirrors the C behaviour: skips leading C-locale whitespace, accepts an
+/// optional `+`/`-` sign, then reads decimal digits until the first
+/// non-digit byte. Parsing stops at that byte; trailing content is ignored
+/// and a string with no digits yields 0.
+///
+/// The accumulator is `i64` so that the magnitude of `i32::MIN` (which is
+/// valid input) fits without overflow. Inputs are assumed to lie within the
+/// `int` range, as specified by the task.
+pub fn parse_int(s: &str) -> i32 {
+    let bytes = s.as_bytes();
+    let mut i = 0;
+
+    // isspace in the C locale: ' ', '\t', '\n', '\v', '\f', '\r'
+    while i < bytes.len() && matches!(bytes[i], b' ' | b'\t' | b'\n' | 0x0b | 0x0c | b'\r') {
+        i += 1;
+    }
+
+    let mut sign: i64 = 1;
+    if i < bytes.len() && (bytes[i] == b'-' || bytes[i] == b'+') {
+        if bytes[i] == b'-' {
+            sign = -1;
+        }
+        i += 1;
+    }
+
+    let mut value: i64 = 0;
+    while i < bytes.len() && bytes[i].is_ascii_digit() {
+        value = value * 10 + i64::from(bytes[i] - b'0');
+        i += 1;
+    }
+
+    // Truncation to i32 only matters for out-of-range input, which the task excludes.
+    (sign * value) as i32
+}

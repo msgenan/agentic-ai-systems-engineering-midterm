@@ -1,0 +1,22 @@
+Bash: cat TASK.md original.c src/lib.rs
+Bash: cat > src/lib.rs <<'E'
+pub fn count_words(s: &str) -> i32 {
+    let mut count = 0;
+    let mut in_word = false;
+    for &b in s.as_bytes() {
+        if b == 0 {
+            break;
+        }
+        if matches!(b, b' ' | b'\t' | b'\n' | 0x0b | 0x0c | b'\r') {
+            in_word = false;
+        } else if !in_word {
+            in_word = true;
+            count += 1;
+        }
+    }
+    count
+}
+E
+./run_tests.sh 2>&1 | tail -15
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/T3_count_words/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -15

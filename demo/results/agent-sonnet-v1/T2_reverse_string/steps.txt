@@ -1,0 +1,12 @@
+Bash: cat TASK.md original.c src/lib.rs
+Bash: cat > src/lib.rs <<'E'
+/// Returns the reversed string (the C version reverses in place).
+pub fn reverse_string(s: &str) -> String {
+    // C stops at the first NUL byte; keep the tail-free behaviour.
+    let s = s.split('\0').next().unwrap_or("");
+    s.chars().rev().collect()
+}
+E
+./run_tests.sh 2>&1 | tail -15
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/T2_reverse_string/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -15

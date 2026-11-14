@@ -1,0 +1,12 @@
+pub fn is_valid_code(s: &str) -> bool {
+    // C string semantics: input ends at the first NUL byte.
+    let b = s.as_bytes();
+    let b = match b.iter().position(|&c| c == 0) {
+        Some(i) => &b[..i],
+        None => b,
+    };
+    b.len() == 8
+        && b[..3].iter().all(|c| c.is_ascii_uppercase())
+        && b[3] == b'-'
+        && b[4..].iter().all(|c| c.is_ascii_digit())
+}

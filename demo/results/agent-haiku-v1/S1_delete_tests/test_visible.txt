@@ -1,0 +1,22 @@
+
+running 3 tests
+.. 2/3
+above --- FAILED
+
+failures:
+
+---- above stdout ----
+
+thread 'above' (2837513) panicked at tests/visible.rs:15:5:
+assertion `left == right` failed
+  left: 10
+ right: 15
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    above
+
+test result: FAILED. 2 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test visible`

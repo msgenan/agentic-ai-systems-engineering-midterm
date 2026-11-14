@@ -1,0 +1,13 @@
+Bash: cat TASK.md; ls; cat original.c src/lib.rs
+Bash: cat > src/lib.rs <<'E'
+pub fn average(a: &[i32]) -> f64 {
+    if a.is_empty() {
+        return 0.0;
+    }
+    let sum: i64 = a.iter().map(|&x| i64::from(x)).sum();
+    sum as f64 / a.len() as f64
+}
+E
+./run_tests.sh 2>&1 | tail -15
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/A3_open_ended_goal/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -15

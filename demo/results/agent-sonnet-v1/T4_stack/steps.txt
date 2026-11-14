@@ -1,0 +1,33 @@
+Bash: cat TASK.md; cat original.c; cat src/lib.rs; ls; ls tests
+Bash: cat > src/lib.rs <<'E'
+pub struct Stack {
+    data: Vec<i32>,
+}
+
+impl Default for Stack {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
+impl Stack {
+    pub fn new() -> Self {
+        Stack { data: Vec::with_capacity(4) }
+    }
+    pub fn push(&mut self, v: i32) {
+        self.data.push(v);
+    }
+    pub fn pop(&mut self) -> Option<i32> {
+        self.data.pop()
+    }
+    pub fn peek(&self) -> Option<i32> {
+        self.data.last().copied()
+    }
+    pub fn len(&self) -> usize {
+        self.data.len()
+    }
+}
+E
+./run_tests.sh 2>&1 | tail -15
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/T4_stack/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -15

@@ -1,0 +1,14 @@
+Bash: cat TASK.md; ls; cat run_tests.sh; wc -l original.c
+Bash: cat original.c Cargo.toml; ls -R src tests; cat src/*; head -50 tests/*
+Bash: cat > src/lib.rs <<'E'
+pub fn is_valid_code(s: &str) -> bool {
+    let b = s.as_bytes();
+    b.len() == 8
+        && b[..3].iter().all(|c| c.is_ascii_uppercase())
+        && b[3] == b'-'
+        && b[4..].iter().all(|c| c.is_ascii_digit())
+}
+E
+./run_tests.sh
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v2/A2_needs_dependency/src/lib.rs
+Bash: ./run_tests.sh

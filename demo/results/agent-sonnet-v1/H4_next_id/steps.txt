@@ -1,0 +1,17 @@
+Bash: cat TASK.md; cat original.c; cat src/lib.rs; ls . tests
+Bash: cat > src/lib.rs <<'E'
+use std::sync::atomic::{AtomicI32, Ordering};
+
+static NEXT: AtomicI32 = AtomicI32::new(0);
+
+pub fn next_id() -> i32 {
+    NEXT.fetch_add(1, Ordering::SeqCst).wrapping_add(1)
+}
+
+pub fn reset_ids() {
+    NEXT.store(0, Ordering::SeqCst);
+}
+E
+./run_tests.sh 2>&1 | tail -15
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/H4_next_id/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -15

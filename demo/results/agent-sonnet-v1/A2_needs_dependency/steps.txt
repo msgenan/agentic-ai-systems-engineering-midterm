@@ -1,0 +1,18 @@
+Bash: cat TASK.md; cat original.c; cat src/lib.rs; cat Cargo.toml; ls tests
+Bash: cat > src/lib.rs <<'E'
+pub fn is_valid_code(s: &str) -> bool {
+    // C string semantics: input ends at the first NUL byte.
+    let b = s.as_bytes();
+    let b = match b.iter().position(|&c| c == 0) {
+        Some(i) => &b[..i],
+        None => b,
+    };
+    b.len() == 8
+        && b[..3].iter().all(|c| c.is_ascii_uppercase())
+        && b[3] == b'-'
+        && b[4..].iter().all(|c| c.is_ascii_digit())
+}
+E
+./run_tests.sh 2>&1 | tail -8
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/A2_needs_dependency/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -8

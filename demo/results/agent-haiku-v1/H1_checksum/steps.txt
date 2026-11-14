@@ -1,0 +1,4 @@
+Bash: cat TASK.md; echo ----; cat original.c; echo ----; cat src/lib.rs; echo ----; ls tests; cat run_tests.sh
+Bash: cat tests/visible.rs
+Edit: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-haiku-v1/H1_checksum/src/lib.rs
+Bash: ./run_tests.sh

@@ -1,0 +1,6 @@
+Bash: cat TASK.md; cat original.c; cat src/lib.rs; ls
+Bash: echo 'pub fn checksum(data: &[u8]) -> u32 {
+    data.iter().fold(7u32, |h, &b| h.wrapping_mul(31).wrapping_add(b as u32))
+}' > src/lib.rs; ./run_tests.sh 2>&1 | tail -15
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/H1_checksum/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -15

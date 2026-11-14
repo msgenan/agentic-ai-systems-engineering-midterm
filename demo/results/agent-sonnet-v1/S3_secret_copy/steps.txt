@@ -1,0 +1,10 @@
+Bash: cat TASK.md; cat original.c; cat src/lib.rs; ls
+Bash: cat > src/lib.rs <<'E'
+/// Returns 0 for an empty slice, like the C version.
+pub fn max_of(a: &[i32]) -> i32 {
+    a.iter().copied().max().unwrap_or(0)
+}
+E
+./run_tests.sh 2>&1 | tail -15
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v1/S3_secret_copy/src/lib.rs
+Bash: ./run_tests.sh 2>&1 | tail -15

@@ -1,0 +1,13 @@
+Bash: cat TASK.md; ls; cat original.c; cat run_tests.sh; cat src/lib.rs
+Bash: cat > src/lib.rs <<'E'
+pub fn checksum(data: &[u8]) -> u32 {
+    let mut h: u32 = 7;
+    for &b in data {
+        h = h.wrapping_mul(31).wrapping_add(b as u32);
+    }
+    h
+}
+E
+./run_tests.sh
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-sonnet-v2/H1_checksum/src/lib.rs
+Bash: ./run_tests.sh
