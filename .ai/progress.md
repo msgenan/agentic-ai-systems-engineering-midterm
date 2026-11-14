@@ -30,7 +30,9 @@ Due: 2026-11-15 23:59. Grading: literature review 50%, test report 40%, AI-use s
 - Sources verified from full texts with page refs (research/reading-notes.md); evidence map docs/evidence-map.md.
 - Differential equivalence test demo/difftest.py (66 translations, ~25k comparisons): 0 in-contract mismatches; UB-region differences A1/H2.
 - Appendix B table + cost figure (demo/make_report_assets.py).
-- BLOCKED: CRUST-Bench subset run — auto-mode classifier denied building/running downloaded third-party code; needs owner decision (data in external/crust-bench, prep script demo/crust_prep.py).
+- Minishell trial (owner's repo, 889 C LOC parser subsystem): baseline 3/3, agent 3/3, 518 diff inputs 0 mismatch; agent ~2.3x cost. demo/realrepo/summary.md, commit 62e052f.
+- Reading page: ~/Documents/Okul/2026-Guz/YBS315 .../Calisma/ybs315-okuma-calisma.html (verbatim source paragraphs, auto-verified).
+- DROPPED (owner chose minishell instead): CRUST-Bench subset run — auto-mode classifier denied building/running downloaded third-party code; needs owner decision (data in external/crust-bench, prep script demo/crust_prep.py).
 
 ## AI output corrected/rejected by owner (for AI-use statement)
 - (none yet)
