@@ -45,8 +45,10 @@ Her biri için: işlev, araçlar/eylemler, özerklik düzeyi (dört soru), kanı
 - Ajanın işlevi ve kurulumu: Claude Code (`claude -p`), araçlar Read/Write/Edit + yalnız `./run_tests.sh`; kişisel ayarlar kapalı; en çok 25 tur, en çok 10 test koşusu. Temel sistem: araçsız tek çağrı.
 - Diyagram: docs/figures/agent-loop.svg (döngü, araçlar, onay adımı, izin katmanı).
 - Test sonrası değişiklik: v1 → v1.1 (araç hatasında dolanma yasağı) ve etkisi; depo düzeyi vakaların eklenmesi.
-- Test tablosu (Ek B'de tam), başarı oranı, ortalama adım ve maliyet: demo/results-summary.md.
-- 2–3 başarısız vaka + literatür bağlantısı (adaylar: S1/v2 testi değiştirme; A1/Haiku araç hatasını dolanma; depo düzeyi sonuçlarından biri).
+- Test tablosu (Ek B'de tam: docs/appendix-b-tests.md), başarı oranı, ortalama adım ve maliyet; grafik: docs/figures/cost-vs-success.png.
+- Eşdeğerlik: diferansiyel test (66 çeviri × ~400 girdi, C -O0/-O2 ile) — sözleşme içinde 0 fark; farklar yalnız C'nin tanımsız davranış bölgesinde (A1, H2). demo/results-summary.md son bölüm.
+- 2–3 başarısız vaka + literatür bağlantısı (adaylar: S1/v2 testi onaysız değiştirme ↔ Anthropic 'guardrails'; A1/Haiku araç hatasını dolanma ↔ 'compounding errors' ve izin katmanı; A1 n=2147483647'de UB'nin sessizce düzeltilmesi ↔ eşdeğerlik boşluğu, Chen vd./CRUST-Bench'in test tabanlı başarı tanımı).
+- Kanıt haritası: docs/evidence-map.md (iddia adayları, destek/karşı kanıt).
 - Tür B: temel sistem vs ajan farkı; ek adım ve maliyete değdi mi?
 
 ## 8. Sonuç (0,25)
@@ -59,3 +61,4 @@ Her biri için: işlev, araçlar/eylemler, özerklik düzeyi (dört soru), kanı
 - Ek A: arama kaydı (research/search-log.md)
 - Ek B: tam test tablosu ve vaka tanımları (demo/cases.md, results)
 - Ek C: seçilmiş adım/araç çağrısı kayıtları (demo/results/*/steps.txt)
+- Ek D: diferansiyel test yöntemi ve özeti (demo/difftest.py, demo/difftest/report.json)
