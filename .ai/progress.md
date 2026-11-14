@@ -21,7 +21,7 @@ Due: 2026-11-15 23:59. Grading: literature review 50%, test report 40%, AI-use s
 3. Reading (owner) — IN PROGRESS: start with Anthropic 2024 + Pan et al. 2024
 4. Demo build — DONE: demo/run.py harness, 14 cases (demo/cases/), prompts; references pass, expected values checked against gcc-compiled C; smoke test ok (deleted)
 5. Test cases — DONE: owner approved 14; added R1_expr_eval, R2_hash_table (repo-level) after round 1 ceiling effect (owner delegated: proceed without asking)
-6. Runs — round 1 DONE (demo/results-summary.md); round 2 RUNNING: R1/R2 x3 on baseline-sonnet, agent-sonnet-v1, baseline-haiku, agent-haiku-v1, agent-sonnet-notests; A1 x3 haiku v1 vs v1_1 (post-test prompt change)
+6. Runs — DONE (demo/results-summary.md, rounds 1+2). Verdicts = Anakin proposals, owner confirms.
 7. Discussion -> 4-5 bullet argument — todo
 8. Writing (owner) — skeleton docs/report-outline.md, docs/references.md (APA, arXiv authors), docs/figures/agent-loop.svg DONE
 9. PDF + final checks — todo
