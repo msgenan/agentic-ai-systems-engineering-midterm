@@ -1,0 +1,2 @@
+   Compiling migrated v0.1.0 (/Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/realrepo/work/reference/r1)
+    Finished `release` profile [optimized] target(s) in 0.46s

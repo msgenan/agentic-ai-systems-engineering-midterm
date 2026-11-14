@@ -1,0 +1,2 @@
+   Compiling migrated v0.1.0 (/Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/realrepo/work/agent-sonnet-v1/r2)
+    Finished `release` profile [optimized] target(s) in 0.55s

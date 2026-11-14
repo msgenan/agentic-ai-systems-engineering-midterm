@@ -1,0 +1,518 @@
+
+   
+	
+ls
+ls -la /tmp
+echo hello world
+echo "a  b"
+echo 'a  b'
+echo $HOME
+echo "$HOME"
+echo '$HOME'
+echo $A
+echo $NOVAL.x
+echo $EMPTY
+echo $?
+echo "$?"
+echo $$
+echo $$$A
+echo $1
+echo $
+echo $ x
+echo "$"
+echo $é
+echo é$A
+echo $_UND
+echo $x1y
+echo $EQ
+echo ${A}
+echo $A$B$USER
+echo a$A'b'
+echo $A'b'
+echo 'a'$A
+echo "a"$A
+echo a'$A'$A
+echo "$A"'$A'"$A"
+echo ''
+echo ""
+echo '' "" x
+echo "'"
+echo '"'
+echo "it's"
+cat < in > out
+cat <in>out
+cat >>out <<EOF
+cat > > f
+> f
+>> f cmd
+cmd >
+cmd >>
+cmd <
+cmd <<
+cmd < | x
+a | b | c
+a|b
+a || b
+| a
+a |
+a | | b
+a ||| b
+echo a;b
+echo 'a;b'
+echo "a\b"
+echo a\b
+echo "unclosed
+echo 'unclosed
+echo "a'b
+echo "a" "
+'
+"
+''
+""
+export A=$HOME
+export A
+export "A"
+export 'A=$B' C=$A
+export A="$B" X
+export $A
+export
+export  A=1  B
+echo export A
+x export A=$A
+export A='x y'
+export "$A"=1
+echo 	 a  b  c  d
+ echo   x   
+echo	a
+echo日本語 $A
+echo "日本 $USER"
+echo $日本
+echo ñ$HOME
+echo >>>> f
+echo <<< f
+echo <><> f
+echo a>b>c
+echo a<b<c
+echo "a|b" 'c>d'
+echo a"b c"d
+echo "a""b"
+echo 'a''b'
+echo "$A$B"x
+echo '$A'"$B"'$A'
+$A
+$A $B
+$NOSUCH
+"$NOSUCH"
+echo $A.$B-$USER_
+echo $USER_x
+echo "$ A"
+echo "$$"
+echo "$?x"
+echo $?$?
+echo $?x
+cat <$A
+cat > "$HOME/f"
+cat > '$HOME/f'
+cat << '$A'
+cat << "$A"
+ls | grep $A | wc -l > $B
+<<> grepA=$A$é 	 ) 
+$NOSUCHgrep | !A=$A'>$USER_|"'$EMPTY!"é>" )
+$9a!> $HOME$EQ' ;' echo "'"  
+$NOVAL$_UND | ls" ''" | ";"''$A$B 
+'>'$PATH
+>>grep$?"'<|x1"$_UNDa< ' >' <<< 	 
+$9a"|'>" foo=bar*#$x1 foo=bar$$PATH
+'\>'' <x;'A=$A 
+> echo-n '$USER\$HOME'é$$EMPTY ";  "x1 >< 	 | 	 'a<<'""'x' 
+ls 	 ||  |' grep   'éa ';"|'"$PATH"!> a$USER_	
+'x$A.\'$1 # 'x"' "
+ << << é $USER_"$9a>" 
+ ~&$1'>(''$?  ' ''$é&  |$$
+$NOVAL
+ > << $9a$HOMEa=b=c"  foo=bar><" 	 "  ;   "$_UND '' 
+'' 
+A=$A)echo;  path/to/f($USER_$9a	<cat foo=bar">>export\"| 
+"" "foo=bar >|"$EQ '$é' % $EMPTY'xls<;'~ 'x'";&"'  '
+''*path/to/f< $Aé$9a*$PATH 
+$é"|"'";"'  >>* '') $NOVALgrep 
+| $_UND';>' <日本$NOSUCH$NOVAL $Bé$$">'"ls <<$_UND$PATH
+>>> $"'|$NOVAL"''  $EQ 
+$EMPTY""a |';;' "; |"	'>|"  ''grep'& << echo""$USER  '||'$$$A$B'
+echo'  '$1 echo > " "$A-x$9a é< 
+	a$A.  "'>'" $Acata=b=c'  ;;"' ls$USER_
+<<echo'\<$B' *日本 $?ls"" 	 
+$USER_ $9a	
+<< *"\" << 
+"\<<"''( << &A=$Aa
+< "<'"$";" $NOVAL
+''é&*)>
+!a=b=c">cat|"	% $é$ ><  "
+'cat" <'|	$$EQ#$A.a=b=c $A$B 
+>> 
+| 
+>$1 &'|' >''*export path/to/f 	 < 
+$é)~* $1"|'" <<< ${A}>>
+é$ x1acat$9a$1 	 \a=b=ca'' ""ls 	 "
+ >path/to/f  a=b=c #$?$EMPTY!;
+('A=$Ax<'%&" $USER_$A. "$NOSUCH%$EQ( "
+$USERecho$_UND #<< \ $EMPTYa>>>  
+< <<	<< 
+-n'""|;'$9a path/to/f$9a ls $B 	 cat
+a"grep\x<"$A-x 
+&&"||")  << > $1"<x"$NOVAL $B) )""grep 
+path/to/f 	 
+"|><" export~ 
+ $?	$A.-n$USERé'!' ${A}''$_UND &$~ !''$ "\echo \"$HOME	
+grep '
+$$EQ'"  ' $$ ||  $9a$ )" !\\"!	
+">\<"$x1$$"  >"$HOME  "|"$?
+$"> x"%
+<< $1 	 <<< $A.'#'$? <<< *$9aecho "|x"* $x1$NOSUCH$ 
+!"$x|"	$-n a=b=c$9a '''>x<;' 	 $& $USER<<a=b=c"< " 
+$EMPTY!$_UND>>>$EQ>>> > $x1	cat '\' '
+>>>" x$_UND"foo=bar<<  $A-x$é 
+	'$USER'$NOSUCH"\\"
+~A=$A $NOVAL'\$_UND\''xx$EMPTY'$'\\>\' $1A=$A 	 
+>>> | $HOME"x<|""x" 
+>< echo path/to/fecho$B $NOVAL$EQecho'' 
+"|foo=bar\>"~	'foo=bar\"  '';| ''"  >x' | $HOME''$NOVAL 
+ 	 $A. <<<< echo-n
+>> << cat"  "( $9a*"<<|"$A-xexport';  >>' 
+$9a'>> '$A | export! 	 
+a=b=c *>>>  ~( ""	
+||  foo=barx1'x"< ' $A-x $HOME a=b=c"cat; |"'      ' &&))'日本x<;'$9a "<$A."path/to/f 
+$é !$$";" "x$x1"!	>> '\\'$A.a 
+$x1grep"' !'"echo'x|;日本'''	$USER_ 
+x1$PATH a=b=c <<< 
+$1"~ """ $$"\<;x""  >"a'>ls""'
+*$EQx1	$NOVAL$EQ$B"~\é" #$éfoo=bar  ($?$EQ export!a;'a|'"  >|>")	
+" '>"$EQ>> )foo=bar ($A.$HOME	grep"xx" <<
+*echox1&$1$HOME << '
+>>| grepexportpath/to/f 'x\'é !$NOSUCH  <  
+'>|>x''>>'grep a=b=c|> é$A=$A>>
+>< foo=bar  '     '&'x;  \'$EQ'"'$USER_
+export($EQ 
+A=$A &"  <"* |ls
+"#(<"'$EQ"'"" $PATHcat	$USER_  a=b=c$USER$? 	 ""* 
+ "export|"	! 	 '" *' ${A}">"日本 # exporta >>
+'"' |> 	 |$NOSUCH 
+$x1 $9a"$EMPTYpath/to/f><"'|grep;' >ls"'x<x""" '  |  '!$EQ 
+!ls日本'!| ls' '<  foo=bar' echoa日本 
+* '<'
+">\  "''$x1	>  é$_UND $A export $EMPTY  & 
+ ""$é) -n$USER$$'' *é$A. > ''foo=bar #echo 
+$ >< $A-x)echo $B!"|"$é"  |;)"'   " ' %$A$B 
+">" $EMPTY$NOSUCH"  " a=b=c"\ " $9a$NOVAL$A$B "x$_UND;"$USER$ | 	 
+$A.$é($path/to/f $grep ~export "exportx "grep $9a)$USER_$1 
+$1 <<#$ ''$A "" 
+< >> '~' >> |$?'$USER_"$é' $1export '|' 
+日本x1 > grep$x1($A$Bx1 "\" 
+ls'${A} <' ""'\\<'"-n>" | '
+$x1$_UND <<< "
+"<!" $1 >  '~'catfoo=bar éexport $_UND$A."\|>" #$NOVAL
+a$1日本日本<<'|;  '$USER_export'>"'$foo=bar 	 "$A-x>" 	 >> 
+'|>'cat '
+日本$A$Bfoo=bar $A.$HOMEgrep  
+$EMPTY$EQ"x\"	"\"-n '$NOVAL'(
+'"|'$x1 ""$$ 
+é#&export $HOME "|"日本'x' ''!  | $$'$' 
+export"<"" |export" > $1""$USERa
+$_UND$A.a -n$A-x $EMPTY&lsexport$é $EQ 
+cat'   x'$x1path/to/f <<<<< > 日本  "
+';"'('<' >> é'<   >' <$1)$x1 '~\\|'x1 'x<''x\$A$B'$PATH 
+"$EMPTYx\"! é 
+$ $NOSUCH";;>"* <a=b=c'||<'a >&''$"
+$A$B >> ;	
+%"" ';x$x1'é '\"$é' ""$B"$B<" >> cat 
+$A$_UND cat("$EMPTY  |" $x1' >;"'!"">%"\"* "" 	 
+ '$PATH"grep'é <<*$PATH 	 #$$A$Béa$1$B 
+ < > '$PATH'$USER << >> \ ||
+<
+$USER"  -n""  $é< " 
+($HOME 
+!$_UND$?  "" *'>$1"'A=$A"> "!'>  A=$A' 	 "|"*$A< 
+-n${A}""  ${A}"    $A$B"ls << 
+ >> <<< $USER path/to/f)* export$HOME 
+|>a$A-x( '\' $USER$A. >>>& $HOME 'path/to/f"''< '  
+ls'< ''x<'
+ ">"(foo=bar -n"echo<!"'' ""!$A. 
+''"|$EMPTYx"path/to/f $EMPTY$EMPTY $NOVAL$EMPTY>> $x1#'\' cat ~echopath/to/f
+ * 	 
+;; $ A=$A a=b=c$A <
+x1'<\;'$A$B >$9a 	 *$x1$$ a=b=c
+;	"  x'"a';  ;"' 'é'~ $$ | 
+foo=bar! A=$A$é"    <" "; ''"'<~'$1 ";\  |""cat>|" $_UND$_UND>>>$A-x
+$A. ||  echo "\  A=$A"echo$Aexport# x1&'>x  |' 
+$NOSUCH$A$B '  'path/to/f-n ";>"$A.'''"$HOME  '
+$é$USER 
+foo=bar$_UND	"$EQ>''"x1) *
+';<'$$$
+";;|"'x'"$USER;>'" < $USER_""-n 
+( "~'x*"éexport"<grep$A$B\" $1$USER_cat | %foo=bar > 	 $EMPTY$1export 
+$é 
+path/to/f$A'||"'  &$x1A=$A""	<< 
+$A'x\>$USER_' '"<''" ";' 'x)é ' 	 $$$(x1path/to/f$B '  \'$EMPTY 'x$A    '"
+<<	#"xecho;"<< $?&' <'
+'"'& >>|	)$A. 
+ > foo=bar'' " " 'x<<' >>">"$é
+  ~ls$1 * 
+>> -n )'\<";'"<"$A$B 
+&
+";x';"#$x1 ''
+<< >> "" '\$_UND\grep'$NOVAL"$1" 
+"$A-x"# $$$"$é"	"\|"$1$EQ 日本 \	<<<  $é"'\;" path/to/f "
+ $A.$A. 	 ${A}a \ "><"'"' 
+>> || >> 
+$USERls'' 	 <	'x>;|'"|;|" $9aexport >> | """  >""A=$A>;"$1
+<"" 	 > a! 
+<< 	 *grep'|   <'	$$ 
+';"' "|" *export 
+> <$A$B""~ \ 
+$1 
+< #  ls'  '  
+ ><$$ a=b=cA=$A "\  x"cat% |A=$Apath/to/f# é'>;'lspath/to/f 
+"  "(a=b=c "<"日本export"|>;"$''
+| grepfoo=bar ';'cat 	 (($USER$PATH
+$""'$A-x\' 
+" x\" | >> **! ''a=b=cls"x$A$B  " '
+<< $A.*>> 
+>'$$''"%\<' > ''$A$B% << $_UND'ls"'$
+echo~*$$x1& !${A}
+$A-xé日本cat '
+foo=bar$1 $_UND'>cat\>'"|;" 
+|~é 	 << '''  $B<' "${A}x" echo($$ '$EQ \''<'( 
+$USER_'') | 
+$NOVAL ''!A=$A '||'-n* | x1*
+ &cat( $B日本ls  >>'<'"\" 
+a	*""$USER_ $é"""\<'>" 	 >> echo"<>\ "$é 
+' $USER_x'""$x1~'x' $$B$$ "';" 
+> ""$HOME$x1 * < 
+$$$9a$NOVAL)echo $?$USER
+|>> \ ""$EQ* 
+$B$' x' %'echo  ' < 
+$$$A-x &'    ; '$é $A$HOME 
+ "\;;$A-x"$A-x $éx1> ";;"foo=bar$A$B >> $HOME'$?"'"" A=$A)'"' 
+ls" <'-n"& 	 'foo=bar$x1'export $USER_$A. "\ >"">$A"$NOSUCH #日本""<< $? 	 a${A}ls '
+$A-x${A} >> A=$A${A}'' $NOSUCHA=$A${A} > 
+"\<\$$"日本 << $NOSUCHé&$$">"<<ax1$USER_|
+ ><< x1""$USER_  
+<!'' 	 << "  <'|"$?$A-x  ' \;$A$B'$A$B">>>""'''$A"""  grepé"" 
+" " > &grepA=$A$NOVAL"'>><"$B
+< A=$A${A} 
+$USER">$?"echo grep x1	$NOSUCH"xpath/to/fx1~" $x1foo=bar'" \>'	"
+ 	 éexport$EQ 	 
+" ;<\"$NOVAL $NOVAL )##$9als$x1 x1	$_UND$?
+export'' $NOSUCH$HOMEgreppath/to/f  '$_UND<' >> >> ">"'<x"''~' 
+> 
+'  '
+"  "'\\"' ">|x"日本 
+a=b=c%#'<<;'
+$NOSUCH$$EMPTY
+ $NOSUCH$x1 $B$A$ls | 	 $A.$HOME '>"' 
+> A=$A'"<>x'">;" $$A. 日本 & catfoo=barecho 
+'x1'path/to/f'$HOME>\|' % %$PATHA=$A "
+%$"|> "(<'"$USER_'"'>" $1foo=bar$x1 export$é 
+ | << < "$EQ\  "export';$A$B>' 
+$USER">*;$EQ" '>x\'$USER'<' 	 << ""cat $NOSUCH>> $9a 
+$A=$A$A-x '$HOME\'foo=bar~<< >> 
+|echo grep foo=barecho < | 
+ $EMPTYpath/to/f">"';$NOSUCH'"A=$A"'$A$B' é"  $EMPTY$USERfoo=bar" $A$B$A-x'  |>  '$EQ |
+$B($A.'<'日本 "" > ( '~x\'";>" $1';'cat A=$A
+é 	 "\"'  '&$A-xgrep | ' 'A=$A 
+"" \ "'\x"a>> >> $USER '$USER_;'"$1|"  $1
+cat "  | """ $?$EQ">" " > <"  '><<$NOVAL'$9a(;foo=bar">|< "( ''  '
+| $A$B"'" 
+$PATH$_UND($é foo=bar'|"'  
+<$A. >>"${A}"a$USER 	 $égrep *" ';" < 	 !$NOSUCH
+x1	">" %( $USER$PATH~ cat"\ x\""$1 " 
+path/to/fexport~é $NOVAL$USER"<  ")# $PATH'!  ' \
+~ 
+grepa=b=ca 	 é$USER_'>'|#	'' 
+'|<'"" | $USER_"<xx;"";   >" >> ~"x|"ls$?'' > 
+> $A-x'' >> % 
+'(<' <<<< A=$A$x1$_UND $USER $A$HOME$A. a~ 	 grepx1$NOVAL 
+'"path/to/f'$$é-ngrep>>< 
+< !$EQ'' ' \foo=barx'$A-x$x1 >>  << '
+$$a$EQ| '"   ' $NOSUCH$PATH	<< '
+$NOSUCH$NOVAL" |$A.*""'x"'xx'-nx1
+*$USER_ cat 'x  "'${A} 
+"\\\"A=$A" "A=$A$A.grep('$_UND'"<"( 
+>>	$A-x'~; "'$PATHgrep <<';>'~  $1$USER_'<x  ' 
+A=$A'<x <'grep' ' A=$A%é x1A=$A*A=$A${A} ' x1;|'é | 
+$USER_${A}
+echo${A}'|\  |'	)$USER|$PATH$x1${A}	%"'""日本x|" 
+ $?$EMPTY * "; " grep'$$'"" 
+';$NOSUCH |'"\<"'$9a  '%#$PATH 
+|  
+é 	 "<" 
+	$1
+"export"$B"'>;"  >>> 
+'\x"' $? 
+ $A.$NOVAL'xé'~x1 $"""export" echo$é ${A}echo >> 	 
+>  << ';$$|  '$_UND$é# 	 
+; #$EMPTY	$PATH '<|\\'x1$A.$A.& *$_UND""
+# 	 $NOVALx1 ''$_UND 
+$USER$_UND"" $x1x1$$ $?$A$B$é> 
+>>> 	 ~x1$EMPTY| '
+foo=bar日本 path/to/f !"""  \x1>" 	 
+<<'
+\$1
+$?"x"A=$A  $1""export  $1$
+'"$EQ'(é
+$_UNDcat#$USER_'x>' ><$!$USER_ << $A-x#"<" "
+($$';>\ 'echo$$'x  ' a=b=c'x;|'$? & a! <<$EMPTY$é
+"\$HOME"grep#path/to/f"\|"${A} 
+echo'\;| '"" > ""$_UNDecho 
+""$9a日本  ~"$NOVAL"$NOVAL 
+é*$<$_UND$$ '>' $_UND'>|''\"" '$PATH($_UND "% >"!"|&;|"!'    '"
+"'>  \"日本"| "${A}> 	 "$PATHx;>"""($EMPTY( 
+"x$USER" "\"$A-x$$  日本&-n $9a"'<" >>>
+!$NOSUCH "x1 "$_UND x1'$NOVAL ' 
+ < a '\>  >'''A=$A
+$?a=b=cpath/to/f<< '' "
+'\\export$'A=$Ax1 '>;  ;'" $A-x* "$EMPTY foo=bar"\"a grep$A 'xx|' path/to/f"'\"& grep 
+$A-x$HOME'$NOVAL' 
+>> <<a	<< >> > <<<
+$NOVAL A=$A << '
+|$EMPTY$<< $x1"<$USER"%";|)"$NOVAL | 
+export'' "x1<x""$A$B"$EMPTY| | ">  "a'||<'')\|'$A-xé 
+ls || "  >$EMPTY""'""x    >""$A-x"path/to/f
+">'$NOVAL"$NOVALecho  $EMPTY$EMPTY';'<$cat	path/to/f$?< $HOME "
+'   $EMPTY' 
+foo=bar << '
+)$?$USER_ x1*"" 	 $USER";'$A;" ''>>>	
+'A=$A'>>	日本'  $$|<'	(">x  " 	 
+| cat"<" < "x'"#"\$é~"< 日本$
+&$!(é"$ '>"""$HOME |$é'$NOSUCH 'path/to/f"x<\;"$ """|<"$A	
+';\"''<'<< $HOME&'\<'日本$NOVALa'' 	 | $EMPTY<<
+ $ $9aexportls-na=b=c 'xx$NOVAL'$?$A-x ''"|  <" 
+$EMPTY-nls #'' $A.$AA=$A "
+'x'  |  $$""日本 
+"<-n  \"''% 
+> $A-xé* 
+% '>  '$path/to/f 	 ( ls 'x$B$HOME$x1'$HOME " "$"  |\" >> 
+$éexport ";"$PATH 	 $ &A=$A$EQ $Bgrep$ '>>;'$1  < 
+$A!$1 	 -n $USER  \|-n 	 <  $EMPTY 
+  > export~	"|"echo a
+'\<;"'""'' '>'$B';<">' 	 < $USER_ "x'|export"	$|> 
+' >$ '!$ a=b=c$?-n>>>
+é $é"'  \"'% ' 	 
+ a; 	 日本$HOME$A-x  $1$USERexport "$$"(é-n$echo 
+>> foo=bar$NOSUCH"x<" 	 A=$A $A!'\\' ''$_UND 'x'echo 
+foo=bar 
+x1  $1*'|'$? '$USER_${A}'é é'<   ;'$x1";""""<\|"$USER_ 
+$x1$1
+$USER_ path/to/f">''" ||
+cat "<a"$A-x$B '<>'$'
+$x1'x ;'$A-x *''	<< '"echo" ''"<'$EQ $EQ
+ls""  | |'$HOME'$$ |$EQ'#  x  '"  |;" 
+; path/to/f $A $A.echo" |    " '\\ \'-n">$USER_x" 日本'|'  path/to/f'  "' 
+"  '" grep$?$NOVAL$NOSUCH"> \"cat
+'$1 '$HOME~aA=$A$A  
+"'>;\"%ls "<""" ${A}"|foo=bar"'\x<  '><| ";"" "$_UND  '|'"" 
+'   >"' $
+<	>> "$A$B\" 
+>> $Bé 
+'x\''|\~'a$A$B& 	 ${A}A=$A|| <	||
+  (>	path/to/f ||'x|  ' "*<" 
+lsls )">|; " a-n "'' " > >> | 
+'<x$'>foo=bar |	'><> '${A}( ";  ;" 
+$EMPTY 
+*export${A} -n ''é$USER_ '
+'x;'"$9a$$EMPTY;"% é${A}x1 x1日本 >  <<<
+> >< >
+$EMPTY$9a'' "'  <<"$ ' ' $HOME"$é| "$A-x 	 << >> $x1  
+foo=bar"<|\"a=b=c $ $?$?$!$EQ ; <"\echo>""\'"A=$A $1'
+ls$1$x1 	 ( *! $NOVAL$PATHfoo=bar
+cat 
+$A-xfoo=bar $A$B-n$x1"&x>" "<-n"$A. foo=bar($A-x日本<<< 
+$B'''$EMPTY' A=$A >< <<< '| '$1 ${A}&	
+grepecho'  ' << $USER_" ;"~path/to/f ' \'$NOSUCH )ls(catx1| 
+>>> 	 | ${A}'< >' a "" >  &	
+"*|")""$x1 $$""$_UND 
+ |	$A.export 
+' ;$NOSUCH|' !; $"a=b=c$NOVAL$NOSUCH>" 
+echo$9a $A$B >>("<"  
+"      " \  % %( $"; "x1 '
+"$A-x>  >" '|>\  '  $USER  grep$A < !$HOME <'
+$NOVAL'%' ''""-n "<;<a=b=c" '>\<'${A}";  "	#x1 > 
+$$ "日本$PATH<" &''$USER ls$NOVALx1 '>&'é"x<%|" 	 < 
+"  "$A.x1echo"x"	'xx'
+'\  cata=b=c'$x1 ls>< <<  < '>('A=$Aé	#$A$B&$?path/to/f"  |" 
+'x%;"'ls$NOSUCHé % 	 grep>%echoexport";"$EQ$EMPTY
+"|" 'x'" |>" $1 	 >> 
+$NOSUCH
+ls$A-xecho |  $USER
+ ' ;\$1'"\<"''"   "#"  xx" $9a >	%";" 	 "x<" $B'\\' 
+'' | "
+<<~A=$A* 
+$A*  export"\  x" 	 *'  $PATH' '"  'a=b=c > cat$NOVAL&
+| $EMPTY export%echo$é-n$A. > "$$;>  " 
+''$USER_'<<'$" *>" > 	 '|"   'é)grep$A$B a=b=c $NOSUCH $HOMEa 
+< &%
+$é*A=$A "  >$EMPTY"$-n 	 
+! 	 export' $1$é  ' 
+$A$9afoo=bar'
+$A. grep'  'A=$A 日本	<<< 
+'   '$9a$NOVAL path/to/f'>"x~'"<   "!  """x ;|" 
+$A$Bcat$A$_UND)) <<<$9apath/to/fx1 a=b=c&$$ $HOME( 	 
+$NOVAL'x$USER<''x' 
+a=b=c';x'$ $9acat foo=barpath/to/f export#path/to/f$EQ "
+$USER 
+\ '\"' $PATH$?$A$B* )
+$EQ""  ""path/to/f"
+< << 
+<<< 	 > lsexport !$1'x'$B '|\'  $USER_é	";"${A} 
+" " $PATHé$B '' $x1  foo=barpath/to/f$9a "
+$USERexport $NOSUCH#export >> <<-n$_UND$NOSUCH $_UND$A$1'  ' $NOVAL 
+é $A"|>" >> $PATH* $A-x" "${A} éecho<
+$A. 
+path/to/f<|$USER x1$1~$A-x$USER_ 	 * "<"	
+grep $_UND'  x;'> 
+"\|%foo=bar"!'a=b=c<' # 
+$A$Ba=b=cfoo=bar* 'ls\>'($$grep'>'ls$1$NOSUCH	'<|$$'
+><""'\|;"' << '\|"|' "<"~x1 '">' 日本 
+\ "ls x"$A$B a=b=c$A$B"|'|  " |> $1
+ $A. a $1  "<"$HOME$A-x	''$USER"<\'" cat$" )x" a $1 '
+) 'xx'%$$
+>> $A-x << << '"\"'"日本"" "-n"$HOME  |  " '
+> 	 
+ls$A-x| ''""#$path/to/f(
+'>" ' ${A} %#x1'export' "x  |"aa > !path/to/ffoo=bar	
+é
+<<"|"x1$USER $PATH$1$9a!) $path/to/fa $USER
+''$$ $?$EQ < 	 é$EQ A=$A";xxx" $"  x|x" grep
+>	'"'$$ A=$A! 	 $?'' $9a$$#${A}|	
+<>> > 	 
+'xé>'日本 	 a<<< <$A-x""$$
+'<x'$EMPTY 
+$A"$A;" $USERgrep-n | \ "''~"$_UND 
+!A=$A-n \ &$"foo=bar  " $  "<<"$ ('\' 'x  \''\$_UND'$EMPTY$NOVAL 
+$USERpath/to/f$NOVAL& "\ $B$9a" "日本" << 
+> <<path/to/f!
+a=b=c $A.'"xx' " " '>'$USER_"
+"日本" > % >>>  $_UND$B'"<' 
+\ >>| 	 ' '' $NOVAL'x1 < 
+&"xa=b=c;""" export 
+<<	>|
+'\"  '';>|' $PATH'<'$$'; |"' -n<<)< 
+>> >< '>\' $A$B~A=$A ~$A-x"${A}<$USER">>>  '|"'${A}
+$A-x) $EQ $A$B$A$A  
+$$ 	 '|x'$NOSUCH$USER_ 
+foo=bar">'>;" $ &'<$x1xx' %$USER_a=b=c )'    \'$  '
+$A$B~é A=$A foo=bar$EMPTY 
+<< 
+>< '$A.\' "''"foo=barcat 	 
+'>'echo" '<$USER_"| 'x$A\ '$_UND	>> '
+""A=$A$B 
+(export $$ 'x;cat|'a=b=c$EMPTY -n '$9a$A$Bpath/to/f>'日本-n 
+<< $USER "$A-x " cat~">" $NOVAL 
+"| \'"$?'a=b=c' 	 $A-x  >> é$9a# $HOME-na  
+!	'|'$USER_'
+!$path/to/f '
+>>  A=$A ''-ncat ''"'<>"$EQ ($é"|x" echoé '"\ '$NOSUCH $Apath/to/f 
+$NOSUCHls$USER ""ls< # "   foo=barx""\ x"$HOME 	 $NOVAL""a=b=c$A-x	
+$_UND$_UND' ";;' $A$B"$$';" $_UND*path/to/f$NOVALpath/to/f$A-x"\\' "~ >  ''
+>> !$A.$EMPTY ~ ls$cat<<
+$A.'\" |'$NOVAL'x<'-n >>">  $?"~"""'x'  " '|' ">|$PATH""'$>"$ 

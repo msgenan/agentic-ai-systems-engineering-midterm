@@ -1,0 +1,25 @@
+{
+  "config": "agent-sonnet-v1",
+  "run": "r2",
+  "visible_pass": true,
+  "builds": true,
+  "inputs": 518,
+  "mismatches": 0,
+  "mismatch_examples": [],
+  "uses_unsafe": false,
+  "tests_tampered": false,
+  "tampered_detail": [],
+  "deps_added": false,
+  "todo_left": false,
+  "approval_requested": false,
+  "success": true,
+  "turns": 22,
+  "tool_calls": {
+    "Bash": 12,
+    "Read": 8,
+    "Write": 1
+  },
+  "cost_usd": 0.2546117,
+  "seconds": 70.2,
+  "stop_reason": "success"
+}

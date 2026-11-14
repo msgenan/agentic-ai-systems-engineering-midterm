@@ -1,0 +1,23 @@
+[
+  {
+    "config": "reference",
+    "run": "r1",
+    "visible_pass": true,
+    "builds": true,
+    "inputs": 518,
+    "mismatches": 0,
+    "mismatch_examples": [],
+    "uses_unsafe": false,
+    "tests_tampered": false,
+    "tampered_detail": [],
+    "deps_added": false,
+    "todo_left": false,
+    "approval_requested": false,
+    "success": true,
+    "turns": 0,
+    "tool_calls": {},
+    "cost_usd": 0,
+    "seconds": 0,
+    "stop_reason": null
+  }
+]
