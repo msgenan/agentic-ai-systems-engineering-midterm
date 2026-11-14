@@ -1,0 +1,30 @@
+Bash: cat TASK.md; echo ----; cat original.c; echo ----; cat src/lib.rs; echo ----; ls -la; ls tests; cat run_tests.sh
+Bash: cat tests/visible.rs; cat Cargo.toml
+Write: /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-haiku-v1/R1_expr_eval_r3/src/lib.rs
+Bash: ./run_tests.sh
+Bash: set -e
+D=$(mktemp -d); P=$(pwd)
+cat > $D/h.c <<'EOF'
+#include <stdio.h>
+#include <stddef.h>
+int eval(const char *s, long *out, size_t *err_pos);
+int main(int argc,char**argv){ char buf[4096]; while(fgets(buf,sizeof buf,stdin)){ buf[strcspn(buf,"\n")]=0; long v=0; size_t e=0; int r=eval(buf,&v,&e); if(r==0) printf("Ok %ld\n",v); else printf("Err %d %zu\n", r==1?0:1, e);} return 0;}
+EOF
+sed -i '1i #include <string.h>' $D/h.c
+cp $P/original.c $D/orig.c
+cc -O0 -o $D/cref $D/h.c $D/orig.c
+mkdir -p $D/crate/src $D/crate/tests
+cp $P/Cargo.toml $D/crate/ ; cp $P/src/lib.rs $D/crate/src/
+cat > $D/crate/tests/diff.rs <<'EOF'
+use migrated::*;
+#[test] fn dump(){ let s=std::fs::read_to_string(std::env::var("IN").unwrap()).unwrap();
+ let mut o=String::new();
+ for l in s.lines(){ match eval(l){ Ok(v)=>o+=&format!("Ok {}\n",v), Err((e,p))=>o+=&format!("Err {} {}\n", if e==EvalError::Syntax{0}else{1}, p)} }
+ std::fs::write(std::env::var("OUT").unwrap(), o).unwrap(); }
+EOF
+printf '%s\n' '1 + 2' '2 * (3 + 4)' '1 +' '1/0+ 2' '5 % 0 )' '(1' '--5' '- -5 * 3' '' '   ' '1 2' '(1))' '7 / 2 * 3' '-7 % 3' '1 @ 2' '9223372036854775807 + 1' '(' ')' '1 ++ 2' '1/0*(' '3 - (4' '	12	' '1/0 + ((' > $D/in.txt
+(cd $D/crate && IN=$D/in.txt OUT=$D/rust.txt cargo test -q --offline --test diff >/dev/null 2>&1 || IN=$D/in.txt OUT=$D/rust.txt cargo test -q --test diff 2>&1 | tail -3)
+$D/cref < $D/in.txt > $D/c.txt
+diff $D/c.txt $D/rust.txt && echo SAME; paste -d'|' $D/in.txt $D/c.txt
+Bash: D=$(mktemp -d /tmp/diffchk.XXXX); echo $D; mkdir -p $D/crate/src $D/crate/tests; cp "$(pwd)/Cargo.toml" $D/crate/; cp "$(pwd)/src/lib.rs" $D/crate/src/; cp "$(pwd)/original.c" $D/orig.c; echo "$D"
+Bash: mkdir -p /tmp/diffchk/crate/src /tmp/diffchk/crate/tests && cp /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-haiku-v1/R1_expr_eval_r3/Cargo.toml /tmp/diffchk/crate/ && cp /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-haiku-v1/R1_expr_eval_r3/src/lib.rs /tmp/diffchk/crate/src/ && cp /Users/msgenan/projects/agentic-ai-systems-engineering-midterm/demo/work/agent-haiku-v1/R1_expr_eval_r3/original.c /tmp/diffchk/orig.c && ls -R /tmp/diffchk

@@ -2,7 +2,7 @@ pub fn is_prime(n: i32) -> bool {
     if n < 2 {
         return false;
     }
-    // Widen to i64 so `i * i` cannot overflow (signed overflow is UB in the C original).
+    // Widen to i64 so `i * i` cannot overflow (the C version can overflow `int`).
     let n = i64::from(n);
     let mut i: i64 = 2;
     while i * i <= n {

@@ -33,6 +33,8 @@ CONFIGS = {
     "agent-sonnet-v1": {"mode": "agent", "model": "sonnet", "prompt": "agent_v1.md", "tools": AGENT_TOOLS},
     "agent-haiku-v1": {"mode": "agent", "model": "haiku", "prompt": "agent_v1.md", "tools": AGENT_TOOLS},
     "agent-sonnet-v2": {"mode": "agent", "model": "sonnet", "prompt": "agent_v2.md", "tools": AGENT_TOOLS},
+    "baseline-haiku": {"mode": "baseline", "model": "haiku", "prompt": "baseline.md"},
+    "agent-haiku-v1_1": {"mode": "agent", "model": "haiku", "prompt": "agent_v1_1.md", "tools": AGENT_TOOLS},
     "agent-sonnet-notests": {"mode": "agent", "model": "sonnet", "prompt": "agent_v1.md",
                              "tools": ["Read", "Write", "Edit"]},
 }
@@ -175,15 +177,19 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True, choices=CONFIGS)
     ap.add_argument("--cases", default="")
+    ap.add_argument("--repeat", type=int, default=1)
     a = ap.parse_args()
     cfg = CONFIGS[a.config]
     ids = a.cases.split(",") if a.cases else sorted(p.name for p in CASES.iterdir() if p.is_dir())
+    summary = RESULTS / a.config / "summary.json"
+    old = json.loads(summary.read_text()) if summary.exists() else []
     rows = []
-    for cid in ids:
+    for cid, rep in [(c, r) for c in ids for r in range(1, a.repeat + 1)]:
+        run_id = cid if rep == 1 else f"{cid}_r{rep}"
         case = CASES / cid
         meta = json.loads((case / "meta.json").read_text())
-        wd = WORK / a.config / cid
-        out = RESULTS / a.config / cid
+        wd = WORK / a.config / run_id
+        out = RESULTS / a.config / run_id
         out.mkdir(parents=True, exist_ok=True)
         make_workspace(case, wd, meta)
         orig = {"visible": sha(wd / "tests" / "visible.rs"), "cargo": sha(wd / "Cargo.toml")}
@@ -195,14 +201,16 @@ def main() -> None:
         else:
             run = run_agent(cfg, wd, out)
         ev = evaluate(case, wd, orig, run, out)
-        row = {"case": cid, "kind": meta["kind"], **ev,
+        row = {"case": cid, "run": run_id, "kind": meta["kind"], **ev,
                **{k: run.get(k) for k in ("turns", "tool_calls", "cost_usd", "seconds", "stop_reason")}}
         (out / "final.md").write_text(run.get("final", "") or "")
         (out / "steps.txt").write_text("\n".join(run.get("steps", [])))
         (out / "eval.json").write_text(json.dumps(row, ensure_ascii=False, indent=2))
         rows.append(row)
         print(json.dumps(row, ensure_ascii=False), flush=True)
-    (RESULTS / a.config / "summary.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2))
+    new_ids = {r["run"] for r in rows}
+    merged = [r for r in old if r.get("run", r["case"]) not in new_ids] + rows
+    summary.write_text(json.dumps(merged, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
