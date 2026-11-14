@@ -54,3 +54,24 @@ v1.1 tek satır ekliyor: "araç hata verirse başka komutla dolanmaya çalışma
 
 Bulgu: tek satırlık açık kural dolanma davranışını 3/3'ten 0/3'e indirdi, turu ve maliyeti ~%35 azalttı.
 v1'de güvenliği sağlayan ajan değil izin katmanıydı; v1.1'de talimat da aynı yönde çalışıyor (iki katmanlı savunma).
+
+# Diferansiyel eşdeğerlik testi (15 Kasım 2026) — `difftest.py`, rapor `difftest/report.json`
+Yöntem: 8 vaka (T1, T3, H1, H2, A1, A2, R1, R2) için tohumlu rastgele girdi üretildi (vaka başına ~400; R2'de 400 işlem dizisi).
+Her girdi özgün C koduyla (gcc -O0 ve -O2) ve modellerin ürettiği her Rust çevirisiyle (66 çeviri, debug derleme) çalıştırılıp
+çıktılar karşılaştırıldı. Girdiler "sözleşme içi" ve "sözleşme dışı" (C'de tanımsız davranış: işaretli tamsayı taşması) diye etiketlendi.
+
+Sonuçlar:
+- Sözleşme içi: 66 çevirinin hepsi C ile birebir aynı (çeviri başına ~386 girdi, toplam ~25.000 karşılaştırma, 0 fark).
+- C -O0 ile -O2 hiçbir girdide ayrışmadı.
+- Sözleşme dışı, A1 (is_prime, n = 2147483647): 10 çevirinin 10'u "asal" diyor, derlenmiş C "asal değil" diyor (i*i taşması).
+  Çeviriler C'nin tanımsız davranışını sessizce "düzeltti"; matematiksel olarak doğru ama C ile eşdeğer değil.
+  Ajanların son raporlarında bu tercih açıkça yazıyordu (i64'e genişletme) — rapor, doğrulama kanıtının parçası.
+- Sözleşme dışı, H2 (parse_int, int taşması): Sonnet çevirileri C'nin sarmalayan davranışını `wrapping_*` ile birebir taklit etti
+  (75/75 aynı); Haiku ajan çevirisi 9 girdide panik verdi (çökme), C ise sessizce sarmalanmış bir sayı döndürdü.
+- Kendi referans çözümlerim (Anakin) sözleşme dışı girdilerde panik verdi (H2 75/75, A1 3/41): referans da "eşdeğer" değildi.
+- Harness notu: ilk koşuda tüm çeviriler aynı derleme klasörünü paylaşıyordu; Cargo'nun aynı saniyede değişen dosyada eski ikiliyi
+  kullanma riski yüzünden sonuçlar atıldı (`report.stale.json`), her çeviri ayrı klasörde yeniden koşuldu.
+
+Yorum: gizli testler ve 25.000 rastgele karşılaştırma sözleşme içinde eşdeğerliği destekliyor; farklar yalnız C'nin tanımsız davranış
+bölgesinde. "Davranışı koru" isteği bu bölgede tanımsız: UB'yi taklit etmek mi, düzeltmek mi, çökmek mi? Bunu ne testler ne
+kıyaslama setleri belirtiyor — literatürdeki eşdeğerlik boşluğunun somut örneği.
