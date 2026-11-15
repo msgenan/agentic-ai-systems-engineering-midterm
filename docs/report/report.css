@@ -1,0 +1,30 @@
+@page { size: A4; margin: 2.2cm 2.3cm 2.2cm 2.3cm; }
+:root { --ink:#1b1b1b; --muted:#555; --rule:#c9c9c9; --accent:#1f3a5f; }
+html { background:#fff; }
+body { font-family: "Times New Roman", Times, serif; font-size: 11.5pt; line-height: 1.42; color: var(--ink);
+       background:#fff; max-width: none; margin: 0; padding: 0; text-align: justify; hyphens: auto; }
+header#title-block-header { text-align: center; padding-top: 6cm; page-break-after: always; }
+header .title { font-size: 21pt; line-height: 1.25; color: var(--accent); margin-bottom: .6cm; }
+header .subtitle { font-size: 13pt; font-weight: normal; color: var(--muted); margin-bottom: 3cm; }
+header .author, header .date { font-size: 12.5pt; margin: .2cm 0; }
+nav#TOC { page-break-after: always; }
+nav#TOC h2 { font-size: 15pt; color: var(--accent); }
+nav#TOC ul { list-style: none; padding-left: 0; line-height: 1.9; }
+nav#TOC a { color: var(--ink); text-decoration: none; }
+h1 { font-size: 14.5pt; color: var(--accent); margin: 1.1em 0 .45em; page-break-after: avoid; }
+h2 { font-size: 12.5pt; margin: .9em 0 .35em; page-break-after: avoid; }
+p { margin: .45em 0; orphans: 3; widows: 3; }
+blockquote { margin: .7em 1.2em; padding: .3em .8em; border-left: 3px solid var(--rule); color: #222; }
+table { border-collapse: collapse; width: 100%; font-size: 8.8pt; line-height: 1.25; margin: .6em 0 .9em; text-align: left;
+        page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th, td { border: 1px solid var(--rule); padding: 3px 5px; vertical-align: top; }
+thead th { background: #eef1f5; }
+figure { text-align: center; margin: .8em 0; page-break-inside: avoid; }
+figure img { max-width: 100%; }
+figcaption { font-size: 9.5pt; color: var(--muted); margin-top: .3em; }
+code { font-family: Menlo, Consolas, monospace; font-size: 9pt; }
+pre { font-size: 8pt; background: #f6f6f6; padding: .6em; white-space: pre-wrap; text-align: left; }
+.pagebreak { page-break-before: always; }
+ul, ol { margin: .3em 0 .5em; padding-left: 1.4em; }
+li { margin: .2em 0; }
